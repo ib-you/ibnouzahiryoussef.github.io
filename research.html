@@ -19,22 +19,23 @@ body {
 a {
   color: #1f4e79;
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 a:hover {
   color: #0b3c6f;
-  text-decoration: underline;
 }
 
 /* NOM */
-h1, h1 a {
+h1 a {
   color: #0b3c6f;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-/* TITRES (Research, etc.) */
+/* TITRES */
 h2 {
   margin-top: 40px;
   color: #1f4e79;
@@ -47,44 +48,50 @@ p, .paper {
   text-align: justify;
 }
 
+p {
+  margin-bottom: 16px;
+}
+
+/* NAVIGATION */
+nav {
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+nav a {
+  margin-right: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1.5px solid #0b3c6f;
+  background-color: #e8f1fb;
+  color: #0b3c6f;
+  font-weight: 600;
+}
+
+nav a:hover {
+  background-color: #0b3c6f;
+  color: white;
+}
+
+/* PAPERS */
 .paper {
   margin-bottom: 30px;
 }
 
-/* TITRES ARTICLES */
 .paper-title {
-  color: #2a6fa1; /* même bleu que les autres titres */
+  color: #2a6fa1;
   font-style: italic;
   font-weight: 600;
-  display: block;
-  margin-bottom: 2px;
 }
 
-.paper-title a:hover {
-  text-decoration: underline;
-  color: #0b3c6f;
-}
-
-.paper-link {
-  display: block;
-  margin-bottom: 8px; /* espace AVANT abstract */
-}
-
-.paper-abstract {
-  display: block;
-  text-align: justify;
-}
-
-/* AUTEURS */
 .authors {
   color: #2c3e50;
   font-weight: bold;
 }
 
-/* NAV */
-.nav {
-  color: #6b7c8f;
-  margin-bottom: 30px;
+/* ESPACEMENT NOM */
+.name {
+  margin-bottom: 5px;
 }
 </style>
 </head>

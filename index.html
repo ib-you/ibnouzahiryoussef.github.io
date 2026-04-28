@@ -87,17 +87,19 @@ p {
   font-weight: bold;
 }
     nav a {
-  margin-right: 18px;
+  margin-right: 12px;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1.5px solid #2a6fa1;
-  background-color: #e8f1fb; /* BLEU CLAIR */
-  color: #1f4e79;
+
+  border: 1.5px solid #0b3c6f; /* même couleur */
+  background-color: #e8f1fb;   /* bleu très léger */
+
+  color: #0b3c6f; /* même couleur texte */
   font-weight: 600;
 }
 
 nav a:hover {
-  background-color: #2a6fa1;
+  background-color: #0b3c6f;
   color: white;
 }
     .profile {
@@ -114,11 +116,10 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
     .separator {
-  width: 120px;              /* longueur de la ligne */
-  height: 2.5px;              /* épaisseur */
-  background-color: #0b3c6f; /* même bleu que ton nom */
-  margin: 5px 0 8px 0; /* centré + espace */
-  border-radius: 2px;
+  width: 100%;
+  height: 2px;
+  background-color: #0b3c6f;
+  margin: 4px 0 6px 0; /* 🔥 plus proche */
 }
     .header {
   display: flex;
@@ -143,6 +144,12 @@ nav a:hover {
   height: 2px;
   background-color: #0b3c6f;
   margin: 5px 0 8px 0;
+}
+    .name {
+  margin-bottom: 2px; /* rapproche du trait */
+}
+    .info p {
+  margin-top: 2px; /* rapproche du trait */
 }
 </style>
 </head>

@@ -6,15 +6,20 @@
 
   <meta name="google-site-verification" content="CRF1Neyq0c4UQVn2WwNIFYU0VfeaLZkuF6cg0Cy0MUw" />
   <style>
+html, body {
+  height: 100%;
+}
+
 body {
   max-width: 760px;
-  margin: 70px auto;
+  margin: 0 auto; /* 🔥 enlève le margin-top */
+  padding: 70px 0; /* 🔥 remplace margin par padding */
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
   line-height: 1.7;
   color: #1a1a1a;
 
-  /* 🔥 fond bleu élégant */
   background: linear-gradient(to bottom, #f4f7fb, #e8f1fb);
 }
 

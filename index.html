@@ -1,359 +1,606 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-  <title>Ibnouzahir Youssef | PhD Candidate in Economics</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibnouzahir Youssef | PhD Candidate in Economics</title>
 <meta name="description" content="Ibnouzahir Youssef - PhD Candidate in Economics. Research in monetary policy, macroeconomics, and central bank independence.">
-
 <meta property="og:title" content="Ibnouzahir Youssef">
 <meta property="og:description" content="PhD Candidate in Economics | Monetary Policy & Macroeconomics">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ibnouzahiryoussef.github.io/">
-  <style>
-html {
-  min-height: 100%;
-  background: linear-gradient(
-    135deg,
-    #d9e6f5 0%,
-    #c6d9ee 40%,
-    #eaf1f9 100%
-  );
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:  #0b2d4e;
+  --mid:   #1a5276;
+  --sky:   #2e86c1;
+  --ice:   #d6eaf8;
+  --paper: #f7f9fc;
+  --text:  #1c2b3a;
+  --muted: #5d7a8c;
+  --line:  rgba(11,45,78,0.13);
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
 }
-    html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
 
-  background:
-    radial-gradient(circle at 10% 20%, rgba(11,60,111,0.14), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(42,111,161,0.11), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(11,60,111,0.06), transparent 45%);
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  z-index: -1;
-  pointer-events: none;
-}
-    html::after {
-  content: "";
-  position: fixed;
-  inset: 0;
+html { min-height: 100%; }
 
-  background: linear-gradient(
-    120deg,
-    transparent 70%,
-    rgba(255,255,255,0.15)
-  );
-
-  z-index: -1;
-  pointer-events: none;
-}
 body {
-  max-width: 760px;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--paper);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Subtle grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient wash */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 10%, rgba(46,134,193,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 90% 85%, rgba(11,45,78,0.05) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating equations */
+.bg-equations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.eq {
+  position: absolute;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(11,45,78,0.055);
+  white-space: nowrap;
+  animation: floatEq 28s ease-in-out infinite;
+  user-select: none;
+}
+.eq:nth-child(1) { top: 8%;  left: 3%;  font-size: 18px; animation-delay: 0s;   animation-duration: 30s; }
+.eq:nth-child(2) { top: 22%; right: 4%; font-size: 15px; animation-delay: -8s;  animation-duration: 25s; }
+.eq:nth-child(3) { top: 55%; left: 2%;  font-size: 14px; animation-delay: -14s; animation-duration: 32s; }
+.eq:nth-child(4) { top: 75%; right: 3%; font-size: 17px; animation-delay: -5s;  animation-duration: 27s; }
+.eq:nth-child(5) { top: 40%; left: 60%; font-size: 13px; animation-delay: -18s; animation-duration: 22s; }
+.eq:nth-child(6) { top: 88%; left: 20%; font-size: 16px; animation-delay: -10s; animation-duration: 35s; }
+@keyframes floatEq {
+  0%,100% { transform: translateY(0) translateX(0); }
+  33%      { transform: translateY(-14px) translateX(6px); }
+  66%      { transform: translateY(8px) translateX(-4px); }
+}
+
+/* ─── LAYOUT ─── */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 55px 20px 35px 20px;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #1a1a1a;
-
-  background: transparent;
+  padding: 0 28px 80px;
 }
 
-/* liens */
-a {
-  color: #1f4e79;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #0b3c6f;
-}
-
-/* NOM */
-.name {
-  color: #0b3c6f;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 3px;
-}
-
-/* ligne */
-.separator {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, #0b3c6f, #2a6fa1);
-  margin: 4px 0 6px 0;
-}
-
-/* header layout */
-.header {
+/* ─── TOP NAV ─── */
+.topbar {
   display: flex;
+  justify-content: flex-end;
+  padding: 28px 0 0;
+  margin-bottom: 60px;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 6px;
   align-items: center;
-  gap: 35px;
 }
 
-/* photo */
-.photo img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 3px solid #0b3c6f;
-}
-
-/* texte */
-.info {
-  flex: 1;
-}
-
-.info p {
-  margin-top: 2px;
-}
-
-/* boutons */
-nav {
-  margin-top: 15px;
-}
-
-nav a {
-  margin-right: 10px;
-  padding: 4px 10px; /* 🔥 plus petit */
-  border-radius: 5px;
-
-  border: 1px solid #0b3c6f; /* plus fin */
-  background-color: #e8f1fb;
-  color: #0b3c6f;
-
-  font-size: 14px; /* 🔥 réduit */
-  font-weight: 600;
-
-  display: inline-block;
+.topbar-nav a {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--mid);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
   transition: all 0.2s ease;
 }
 
-nav a:hover {
-  background-color: #0b3c6f;
-  color: white;
-  transform: translateY(-2px); /* plus discret */
+.topbar-nav a:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
 }
 
-nav a:active {
-  transform: translateY(-1px);
-}
-/* titres sections */
-h2 {
-  margin-top: 40px;
-  color: #1f4e79;
-  border-bottom: 2px solid transparent;
-  border-image: linear-gradient(to right, #0b3c6f, #2a6fa1);
-  border-image-slice: 1;
-  padding-bottom: 6px;
+.topbar-nav a.cv-btn {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
 }
 
-/* texte */
-p {
+.topbar-nav a.cv-btn:hover {
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+/* ─── HERO ─── */
+.hero {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 64px;
+  animation: fadeIn 0.9s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-photo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 0.9s ease 0.1s both;
+}
+
+.photo-frame {
+  position: relative;
+  width: 155px;
+  height: 155px;
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(11,45,78,0.18);
+}
+
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 155px;
+  height: 155px;
+  border-radius: 12px;
+  background: var(--ice);
+  z-index: -1;
+}
+
+.photo-frame img {
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: var(--sans);
+}
+.contact-link:hover { color: var(--navy); }
+.contact-link svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.7; }
+
+/* ─── HERO RIGHT ─── */
+.hero-info {
+  padding-top: 6px;
+  animation: fadeIn 0.9s ease 0.15s both;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 10px;
+}
+
+/* Academic name — EB Garamond, scholarly feel */
+.hero-name {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--navy);
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+
+.hero-name em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sky);
+}
+
+.hero-rule {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--navy), var(--sky));
+  margin: 18px 0;
+  border-radius: 1px;
+}
+
+.hero-institution {
+  font-size: 13.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  font-family: var(--serif);
+}
+
+.hero-bio {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.85;
   text-align: justify;
 }
-    .skills {
-  margin-top: 18px;
+
+.hero-bio p + p { margin-top: 14px; }
+
+/* Research tags */
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 22px;
+  animation: fadeIn 0.9s ease 0.3s both;
 }
 
-.skill {
-  display: grid;
-  grid-template-columns: 34px 80px 1fr;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  animation: fadeUp 0.8s ease both;
-}
-
-.skill img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
-
-.skill span {
-  color: #0b3c6f;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.bar {
-  height: 8px;
-  background: #d7e6f5;
+.tag {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--mid);
+  background: rgba(46,134,193,0.09);
+  border: 1px solid rgba(46,134,193,0.2);
+  padding: 4px 11px;
   border-radius: 20px;
+  letter-spacing: 0.2px;
+}
+
+/* ─── SECTION HEADING ─── */
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.1px;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ─── SKILLS ─── */
+.skills-section {
+  margin-bottom: 64px;
+  animation: fadeIn 0.9s ease 0.2s both;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.skill-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+  position: relative;
   overflow: hidden;
 }
 
-.level {
-  height: 100%;
-  background: linear-gradient(to right, #0b3c6f, #2a6fa1);
-  border-radius: 20px;
-  animation: growBar 1.3s ease;
-}
-
-@keyframes growBar {
-  from { width: 0; }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-    /* animation des logos */
-.skill img {
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.skill:hover img {
-  transform: scale(1.18) rotate(-4deg);
-  filter: drop-shadow(0 4px 6px rgba(11, 60, 111, 0.25));
-}
-
-/* effet vivant sur les barres */
-.skill:hover .level {
-  filter: brightness(1.15);
-}
-
-/* background économique discret */
-html {
-  min-height: 100%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(42,111,161,0.10), transparent 25%),
-    radial-gradient(circle at 80% 10%, rgba(11,60,111,0.08), transparent 30%),
-    linear-gradient(to bottom, #f4f7fb, #e8f1fb);
-}
-    html::before {
+.skill-card::before {
   content: "";
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--navy), var(--sky));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
 
-  background:
-    url("data:image/svg+xml;utf8,
-<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' opacity='0.08'>
-  
-  <!-- Phillips Curve -->
-  <path d='M50 200 Q200 50 400 200' stroke='%230b3c6f' fill='none' stroke-width='2'/>
-  
-  <!-- IS-LM -->
-  <line x1='100' y1='400' x2='300' y2='250' stroke='%232a6fa1' stroke-width='2'/>
-  <line x1='100' y1='250' x2='300' y2='400' stroke='%232a6fa1' stroke-width='2'/>
-  
-  <!-- AD-AS -->
-  <path d='M500 400 Q650 250 800 400' stroke='%230b3c6f' fill='none' stroke-width='2'/>
-  <path d='M500 250 Q650 400 800 250' stroke='%232a6fa1' fill='none' stroke-width='2'/>
+.skill-card:hover {
+  border-color: rgba(46,134,193,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(11,45,78,0.08);
+}
 
-  <!-- Equation -->
-  <text x='900' y='150' font-size='18' fill='%230b3c6f'>π = βE(π) + κx</text>
+.skill-card:hover::before { transform: scaleX(1); }
 
-  <!-- Taylor Rule -->
-  <text x='900' y='200' font-size='16' fill='%230b3c6f'>i = r* + π + φ(π-π*)</text>
+.skill-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
 
-  <!-- Central Banking -->
-  <text x='900' y='260' font-size='16' fill='%230b3c6f'>CB Policy</text>
+.skill-card:hover .skill-logo { transform: scale(1.1) rotate(-3deg); }
 
-</svg>");
-    
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.skill-info { flex: 1; min-width: 0; }
 
-  pointer-events: none;
-  z-index: -1;
+.skill-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  height: 4px;
+  background: var(--ice);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--sky) 100%);
+  animation: barGrow 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes barGrow {
+  from { width: 0 !important; }
+}
+
+.skill-pct {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+  font-style: italic;
+  font-family: var(--serif);
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-family: var(--sans);
+  animation: fadeIn 0.9s ease 0.35s both;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--navy); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 580px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .hero-name { font-size: 38px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .site-footer { flex-direction: column; gap: 14px; }
 }
 </style>
 </head>
-
 <body>
-  <div class="header">
-  
-  <div class="photo">
-    <img src="photo.jpg" alt="Ibnouzahir Youssef">
-  </div>
 
-  <div class="info">
-    <h1 class="name">IBNOUZAHIR YOUSSEF</h1>
-    <div class="separator"></div>
-    <p>PhD Candidate in Economics</p>
-  </div>
-
+<div class="bg-equations" aria-hidden="true">
+  <span class="eq">π = βE[π] + κx + ε</span>
+  <span class="eq">i = r* + π + φ(π − π*) + φ·ŷ</span>
+  <span class="eq">ΔY = α + βΔM + γΔG + ε</span>
+  <span class="eq">dCBI/dt = f(Δπ, Δi, ΔM)</span>
+  <span class="eq">E(π) = π + θ·ε</span>
+  <span class="eq">BVAR: Y = Σ AᵢY_{t−i} + ε</span>
 </div>
 
-  <nav>
-    <a href="research.html">Research</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="cv.pdf" download>CV</a>
-  </nav>
+<div class="page">
 
-  <p>
-I am a third-year PhD Candidate in Economics at the Faculty of Legal, Economic and Social Sciences in Mohammedia, affiliated with the Laboratory of Economic Performance and Logistics.
-</p>
+  <!-- Nav only, no brand label -->
+  <header class="topbar">
+    <nav class="topbar-nav" aria-label="Main navigation">
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.pdf" class="cv-btn" download>CV ↓</a>
+    </nav>
+  </header>
 
-<p>
-My research focuses on macroeconomic policy analysis, with a strong emphasis on bridging theoretical economic frameworks and empirical real-world dynamics. My doctoral work examines the effectiveness of monetary interventions, transmission mechanisms, and central bank responses to economic shocks. More broadly, I explore how central bank independence and policy frameworks shape inflation control and macroeconomic stability, drawing on evidence from both global contexts and the Moroccan economy, including the experience of Bank Al-Maghrib.
-</p>
+  <!-- Hero -->
+  <section class="hero" aria-label="Introduction">
 
-<p>
-You can reach me at 
-<a href="mailto:ibnouzahiryoussef5@gmail.com">ibnouzahiryoussef5@gmail.com</a>, 
-or connect with me on 
-<a href="https://www.linkedin.com/in/youssef-ibnouzahir-332bb7207/" target="_blank">LinkedIn</a>. 
-</p>
-  
+    <div class="hero-photo-wrap">
+      <div class="photo-frame">
+        <img src="photo.jpg" alt="Ibnouzahir Youssef">
+      </div>
+      <div class="photo-links">
+        <a class="contact-link" href="mailto:ibnouzahiryoussef5@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          ibnouzahiryoussef5@gmail.com
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/youssef-ibnouzahir-332bb7207/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 015 0V17M12 10v7"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
 
-<h2>Technical Skills</h2>
+    <div class="hero-info">
+      <p class="hero-eyebrow">PhD Candidate</p>
+      <h1 class="hero-name">Ibnouzahir<br><em>Youssef</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-institution">
+        Faculty of Legal, Economic and Social Sciences, Mohammedia<br>
+        Laboratory of Economic Performance and Logistics
+      </p>
+      <div class="hero-bio">
+        <p>I am a third-year PhD Candidate in Economics at the Faculty of Legal, Economic and Social Sciences in Mohammedia, affiliated with the Laboratory of Economic Performance and Logistics.</p>
+        <p>My research focuses on macroeconomic policy analysis, with a strong emphasis on bridging theoretical economic frameworks and empirical real-world dynamics. My doctoral work examines the effectiveness of monetary interventions, transmission mechanisms, and central bank responses to economic shocks. More broadly, I explore how central bank independence and policy frameworks shape inflation control and macroeconomic stability, drawing on evidence from both global contexts and the Moroccan economy, including the experience of Bank Al-Maghrib.</p>
+        <p>You can reach me at <a href="mailto:ibnouzahiryoussef5@gmail.com">ibnouzahiryoussef5@gmail.com</a>, or connect with me on <a href="https://www.linkedin.com/in/youssef-ibnouzahir-332bb7207/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      </div>
 
-<div class="skills">
+      <div class="research-tags" aria-label="Research topics">
+        <span class="tag">Monetary Policy</span>
+        <span class="tag">Central Bank Independence</span>
+        <span class="tag">Macroeconomics</span>
+        <span class="tag">BVAR / ARDL</span>
+        <span class="tag">Inflation Targeting</span>
+        <span class="tag">Bank Al-Maghrib</span>
+      </div>
+    </div>
 
-  <div class="skill">
-    <img src="stata.png" alt="STATA">
-    <span>STATA</span>
-    <div class="bar"><div class="level" style="width: 90%;"></div></div>
-  </div>
+  </section>
 
-  <div class="skill">
-    <img src="r2.png" alt="R Studio">
-    <span>R Studio</span>
-    <div class="bar"><div class="level" style="width: 90%;"></div></div>
-  </div>
+  <!-- Technical Skills -->
+  <section class="skills-section" aria-labelledby="skills-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="skills-title">Technical Skills</h2>
+      <div class="section-line"></div>
+    </div>
 
-  <div class="skill">
-    <img src="python3.png" alt="Python">
-    <span>Python</span>
-    <div class="bar"><div class="level" style="width: 85%;"></div></div>
-  </div>
+    <div class="skills-grid">
 
-  <div class="skill">
-    <img src="eviews.png" alt="EViews">
-    <span>EViews</span>
-    <div class="bar"><div class="level" style="width: 90%;"></div></div>
-  </div>
+      <div class="skill-card">
+        <img class="skill-logo" src="stata.png" alt="STATA">
+        <div class="skill-info">
+          <div class="skill-name">STATA</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%; --delay:0.1s"></div></div>
+          <div class="skill-pct">Advanced</div>
+        </div>
+      </div>
 
-  <div class="skill">
-    <img src="matlab.png">
-    <span>MATLAB</span>
-    <div class="bar"><div class="level" style="width: 30%;"></div></div>
-  </div>
+      <div class="skill-card">
+        <img class="skill-logo" src="r2.png" alt="R Studio">
+        <div class="skill-info">
+          <div class="skill-name">R Studio</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%; --delay:0.2s"></div></div>
+          <div class="skill-pct">Advanced</div>
+        </div>
+      </div>
 
-  <div class="skill">
-    <img src="lua.png">
-    <span>LUA</span>
-    <div class="bar"><div class="level" style="width: 20%;"></div></div>
-  </div>
+      <div class="skill-card">
+        <img class="skill-logo" src="python3.png" alt="Python">
+        <div class="skill-info">
+          <div class="skill-name">Python</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%; --delay:0.3s"></div></div>
+          <div class="skill-pct">Proficient</div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-logo" src="eviews.png" alt="EViews">
+        <div class="skill-info">
+          <div class="skill-name">EViews</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%; --delay:0.4s"></div></div>
+          <div class="skill-pct">Advanced</div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-logo" src="matlab.png" alt="MATLAB">
+        <div class="skill-info">
+          <div class="skill-name">MATLAB</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:30%; --delay:0.5s"></div></div>
+          <div class="skill-pct">Intermediate</div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-logo" src="lua.png" alt="LUA">
+        <div class="skill-info">
+          <div class="skill-name">LUA</div>
+          <div class="skill-bar"><div class="skill-fill" style="width:20%; --delay:0.6s"></div></div>
+          <div class="skill-pct">Beginner</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span>© 2026 Ibnouzahir Youssef</span>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.pdf" download>CV</a>
+      <a href="mailto:ibnouzahiryoussef5@gmail.com">Contact</a>
+      <a href="https://www.linkedin.com/in/youssef-ibnouzahir-332bb7207/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </footer>
 
 </div>
-
 </body>
 </html>

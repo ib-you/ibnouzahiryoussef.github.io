@@ -2,92 +2,170 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teaching — Ibnouzahir Youssef</title>
 
-<!-- colle ici EXACTEMENT le même <style> que research.html -->
+<!-- 🔥 EXACTEMENT LES MÊMES FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🔥 EXACTEMENT LE MÊME CSS QUE RESEARCH */
+:root {
+  --navy:  #0b2d4e;
+  --mid:   #1a5276;
+  --sky:   #2e86c1;
+  --ice:   #d6eaf8;
+  --paper: #f5f7fa;
+  --text:  #1c2b3a;
+  --muted: #5d7a8c;
+  --line:  rgba(11,45,78,0.13);
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--text);
+}
+
+/* background grid */
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(11,45,78,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,45,78,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+/* layout */
+.page {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* nav */
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:50px;
+}
+
+.topbar-name {
+  font-family:var(--serif);
+  color:var(--navy);
+  text-decoration:none;
+}
+
+.topbar-name span {
+  color: var(--sky);
+}
+
+.topbar-nav a {
+  margin-left:10px;
+  padding:6px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  color:var(--mid);
+}
+
+.topbar-nav a:hover,
+.topbar-nav .active {
+  background:var(--navy);
+  color:white;
+}
+
+/* title */
+.page-title {
+  font-family:var(--serif);
+  font-size:40px;
+  color:var(--navy);
+}
+
+.page-rule {
+  height:2px;
+  background:linear-gradient(to right,var(--navy),var(--sky));
+  margin:10px 0 40px;
+}
+
+/* cards */
+.card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px;
+  margin-bottom:15px;
+  transition:0.25s;
+}
+
+.card:hover {
+  transform:translateX(4px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card-title {
+  font-family:var(--serif);
+  font-size:18px;
+  color:var(--navy);
+}
+
+.card-meta {
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.card-desc {
+  color:var(--muted);
+  font-size:15px;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="bg-equations" aria-hidden="true">
-  <span class="eq">π = βE[π] + κx + ε</span>
-  <span class="eq">i = r* + π + φ(π − π*) + φ·ŷ</span>
-  <span class="eq">ΔY = α + βΔM + γΔG + ε</span>
-  <span class="eq">dCBI/dt = f(Δπ, Δi, ΔM)</span>
-  <span class="eq">E(π) = π + θ·ε</span>
-  <span class="eq">BVAR: Y = Σ AᵢY_{t−i} + ε</span>
-</div>
-
 <div class="page">
 
-  <header class="topbar">
-    <a class="topbar-name" href="index.html">IBNOUZAHIR <span>YOUSSEF</span></a>
-    <nav class="topbar-nav">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="teaching.html" class="active">Teaching</a>
-      <a href="cv.pdf" class="cv-btn" download>CV ↓</a>
-    </nav>
-  </header>
+<header class="topbar">
+  <a href="index.html" class="topbar-name">
+    IBNOUZAHIR <span>YOUSSEF</span>
+  </a>
 
-  <div class="page-header">
-    <p class="page-eyebrow">Academic Instruction</p>
-    <h1 class="page-title">Teaching</h1>
-    <div class="page-rule"></div>
+  <nav class="topbar-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="teaching.html" class="active">Teaching</a>
+    <a href="cv.pdf">CV</a>
+  </nav>
+</header>
+
+<h1 class="page-title">Teaching</h1>
+<div class="page-rule"></div>
+
+<div class="card">
+  <div class="card-meta">2026 — Bachelor’s, Semester 6 (Econometrics Track)</div>
+  <div class="card-title">Advanced Macroeconomics</div>
+  <div class="card-desc">
+    Lead instructor for lectures and tutorial sessions. Focus on advanced macroeconomic dynamics and econometric foundations.
   </div>
+</div>
 
-  <section class="section">
-    <div class="section-heading">
-      <h2 class="section-title">Teaching Experience</h2>
-    </div>
-    <div class="section-line"></div>
-
-    <div class="thesis-box">
-      <div class="thesis-label">Undergraduate Instruction</div>
-      <div class="thesis-title">
-        I am passionate about sharing economic knowledge and have recently contributed to undergraduate instruction at the Faculty of Legal, Economic and Social Sciences in Mohammedia.
-      </div>
-    </div>
-
-    <div class="papers-list">
-
-      <div class="paper-card">
-        <div class="paper-meta">
-          <span class="paper-year">2026</span>
-          <span class="paper-authors">Bachelor’s, Semester 6, Econometrics Track</span>
-        </div>
-        <div class="paper-title">
-          Advanced Macroeconomics
-        </div>
-        <div class="paper-abstract open">
-          Lead instructor for both lectures and tutorial sessions. This course focuses on advanced macroeconomic dynamics, building on students’ analytical and econometric foundations.
-        </div>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-meta">
-          <span class="paper-year">2026</span>
-          <span class="paper-authors">Bachelor’s, Semester 4, Common Core</span>
-        </div>
-        <div class="paper-title">
-          Monetary and Financial Economics
-        </div>
-        <div class="paper-abstract open">
-          Instructor for tutorial sessions. This module introduces students to the fundamentals of monetary theory, central banking, and financial market operations.
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <span>© 2026 IBNOUZAHIR YOUSSEF</span>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="cv.pdf" download>CV</a>
-    </nav>
-  </footer>
+<div class="card">
+  <div class="card-meta">2026 — Bachelor’s, Semester 4 (Common Core)</div>
+  <div class="card-title">Monetary and Financial Economics</div>
+  <div class="card-desc">
+    Instructor for tutorial sessions. Introduction to monetary theory, central banking, and financial markets.
+  </div>
+</div>
 
 </div>
 

@@ -13,25 +13,20 @@
   <style>
 html {
   min-height: 100%;
-  background: linear-gradient(
-    135deg,
-    #e8f1fb 0%,
-    #d6e4f5 40%,
-    #f4f7fb 100%
-  );
+  background: linear-gradient(135deg, #eef6ff 0%, #d8e9fa 45%, #f6fbff 100%);
 }
-    html::before {
+
+html::before {
   content: "";
   position: fixed;
   inset: 0;
-
-  background:
-    radial-gradient(circle at 10% 20%, rgba(11,60,111,0.25), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(42,111,161,0.20), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(11,60,111,0.12), transparent 45%);
-
-  z-index: -1;
+  background-image: url("macro-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.45;
   pointer-events: none;
+  z-index: -1;
 }
     html::after {
   content: "";
